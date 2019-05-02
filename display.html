@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style media="screen">
-      body, html {
-        margin: 0;
-        overflow: hidden;
-      }
-    </style>
-  </head>
   <body>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAAGElEQVQIW2P4DwcMDAxAfBvMAhEQMYgcACEHG8ELxtbPAAAAAElFTkSuQmCC">
-      
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAAGElEQVQIW2P4DwcMDAxAfBvMAhEQMYgcACEHG8ELxtbPAAAAAElFTkSuQmCC">     
   </body>
   <script type="text/javascript">
     window.setImage = function(data) {
@@ -20,7 +11,7 @@
     const {ipcRenderer} = require('electron')
     document.addEventListener ('mousedown', e => { ipcRenderer.send('mouse-down', e.clientX, e.clientY) });
     document.addEventListener ('mouseup', e => { ipcRenderer.send('mouse-up', e.clientX, e.clientY ) });
-    document.addEventListener ('mousemove', e => { ipcRenderer.send('mouse-move', e.clientX, e.clientY, e.movementX, e.movementY ) });
+    document.addEventListener ('mousemove', e => { ipcRenderer.send('mouse-move', e.clientX, e.clientY ) });
     document.addEventListener ('mouseenter', e => { ipcRenderer.send('mouse-enter', e.clientX, e.clientY ) });
     document.addEventListener ('mouseleave', e => { ipcRenderer.send('mouse-leave', e.clientX, e.clientY ) });
 

@@ -4,11 +4,9 @@ app.on('ready', () =>{
 
     var offscreenWin = new BrowserWindow({width: 580, height: 450, webPreferences: {offscreen: true}})
     var displayWin = new BrowserWindow({title:'Sticky Mouse Bug', width: 600, height: 500})
-    var i = 0
 
     //offscreenWin.webContents.openDevTools({mode: "detach"})
     offscreenWin.webContents.on('paint', (event, dirty, image) => {
-        console.log('Drawing frame ' + i++)
         displayWin.webContents.executeJavaScript(`setImage('${image.toDataURL()}')`)
     })
 
